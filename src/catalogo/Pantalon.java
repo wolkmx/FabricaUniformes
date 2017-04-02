@@ -1,4 +1,4 @@
-package Catalogo;
+package catalogo;
 
 public class Pantalon extends Prenda{
 	

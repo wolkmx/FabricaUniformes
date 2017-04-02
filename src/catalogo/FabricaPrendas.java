@@ -1,4 +1,4 @@
-package Catalogo;
+package catalogo;
 import java.util.ArrayList;
 
 

@@ -1,4 +1,4 @@
-package Catalogo;
+package catalogo;
 
 public abstract class Prenda implements Cloneable {
 	

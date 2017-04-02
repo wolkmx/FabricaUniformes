@@ -1,5 +1,5 @@
 
-package Catalogo;
+package catalogo;
 
 public class Saco extends Prenda {
 
