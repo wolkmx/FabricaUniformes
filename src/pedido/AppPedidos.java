@@ -10,7 +10,7 @@ public class AppPedidos {
 		//01 Traer catalogo de prendas y visualizar
 		//PrendaConcreta.mostrarCatalogos();	
 		//System.out.println();
-		//TestGIT
+		//TestGIT bb
 		//02 Seleccionar prendas para hacer el pedido.
 		PrendaConcreta saco = new PrendaConcreta();
 		saco.seleccionarPrendaCatalogo("SAC-MODELO1-M");
