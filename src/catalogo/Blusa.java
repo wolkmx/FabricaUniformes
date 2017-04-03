@@ -5,8 +5,8 @@ public class Blusa extends Prenda {
 	
 	public Blusa(){
 		this.setNombre("Blusa");
-		this.setSexo("Mujersss");
-		//prueba
+		this.setSexo("Mujer");
+		// prueba... =) 
 		}
 
 	public void asignaID(){
