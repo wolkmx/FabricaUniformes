@@ -3,6 +3,8 @@ package pedido;
 import catalogo.PrendaConcreta;
 import pedido.decorator.Logo;
 import pedido.decorator.PedidoBordado;
+import produccion.Produccion;
+import produccion.ProxyProduccion;
 
 public class AppPedidos {
 
@@ -44,6 +46,11 @@ public class AppPedidos {
 		System.out.println(pedido.getPedido());
 		System.out.println(pedido.isAnticipo()? "Si" : "No");
 		System.out.println(pedido.getTotal());
+		
+		//Se envia a producción
+		
+		Produccion objProduccion = new ProxyProduccion(pedido.getPedido());
+		objProduccion.RealizarProduccion();
 
 	}
 
