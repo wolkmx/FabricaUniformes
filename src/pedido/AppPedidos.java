@@ -50,7 +50,9 @@ public class AppPedidos {
 		//Se envia a producción
 		
 		Produccion objProduccion = new ProxyProduccion(pedido.getPedido());
-		objProduccion.RealizarProduccion();
+		boolean a = ((ProxyProduccion)objProduccion).PrincipalProduccion();
+		
+		System.out.println(a);
 
 	}
 

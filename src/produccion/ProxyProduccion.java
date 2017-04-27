@@ -25,21 +25,30 @@ public class ProxyProduccion implements Produccion{
 	{
 		this.objPedido = objPedido;
 		bandera = false;
-		objAlmacen = new Almacen(100, 200, 100); //Unidades de tela, botones y cierres
+		objAlmacen = new Almacen(200, 200, 100); //Unidades de tela, botones y cierres
 	}
 	
+	@Override
 	public void RealizarProduccion()
+	{					
+			produccionReal = new ProduccionReal(objPedido);
+			produccionReal.RealizarProduccion();
+			System.out.println("Todo en orden...");			
+	}
+	
+	public boolean PrincipalProduccion()
 	{
-		System.out.println("Estamos en el proxy...");
-		
 		ConsultarPedido(); //Consultando almacen si se cuenta con existencia
-		
 		if(bandera)
 		{
-			produccionReal = new ProduccionReal();
-			produccionReal.RealizarProduccion();
-			System.out.println("Todo en orden...");
-		}		
+			RealizarProduccion();
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+			
 	}
 	
 	public void ConsultarPedido()
@@ -105,8 +114,8 @@ public class ProxyProduccion implements Produccion{
 	private void mtdVerificarExistenciaEnAlmacen(double totalTela, int totalBotones, int totalCierres) {
 		
 		//System.out.println("TotalTela: " + totalTela + " TelaAlmacen: " +objAlmacen.getTotalTela());
-		if(totalBotones < objAlmacen.getTotalBotones())
-			if(totalTela < objAlmacen.getTotalTela())
+		if(totalBotones <= objAlmacen.getTotalBotones())
+			if(totalTela <= objAlmacen.getTotalTela())
 				if(totalCierres < objAlmacen.getTotalCierres())
 					bandera = true; //Si hay existencia se cambia el estado a true de lo contrario debería seguir en falso
 				else
@@ -117,6 +126,7 @@ public class ProxyProduccion implements Produccion{
 			System.out.println("No se cuenta con suficientes botones. Faltan: " + (totalBotones - objAlmacen.getTotalBotones()));
 		
 		//Ver si se desea surtir el almacen en caso de no tener
+		/*
 		if(!bandera)
 		{
 			System.out.println("¿Desea surtir el almacen? S/N");			
@@ -124,8 +134,9 @@ public class ProxyProduccion implements Produccion{
 			if(strEntrada.equals("Si") || strEntrada.equals("S")) // Si no hay 
 				SurtirAlmacen();
 		}
+		*/
 	}
-
+/*
 	public void SurtirAlmacen()
 	{
 		try
@@ -147,5 +158,5 @@ public class ProxyProduccion implements Produccion{
 		ConsultarPedido();
 		//Ingresar datos para surtir el almacen
 	}
-	
+	*/
 }
